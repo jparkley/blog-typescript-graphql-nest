@@ -1,9 +1,7 @@
-const data = require('./data')
+const db = require('./db')
 
-console.log('data in resolver', data);
+const Query = {
+    posts: () => db.posts.list()
+}
 
-// const Query = {
-//     posts: () => data.posts.list
-// }
-
-module.exports =  { }
+module.exports =  { Query }
