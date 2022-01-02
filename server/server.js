@@ -1,15 +1,14 @@
-const fs = require('fs')
 const app = require('express')()
 const { ApolloServer, gql } = require('apollo-server-express')
+const {typeDefs} = require('./graphql/typeDefs')
+const {resolvers} = require('./graphql/resolvers')
 
-const typeDefs = gql(fs.readFileSync('./schema.graphql', { encoding: 'utf8'}))
-const resolvers = require('./resolvers')
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
 
 apolloServer.start().then((res) => {
-    apolloServer.applyMiddleware({app, pat:'/graphql'})
+    apolloServer.applyMiddleware({app, path:'/graphql'})
     app.listen(5000, () => {
-        console.log('basic express server started at 5000');
+        console.log('apollo express server started at 5000');
     })
 })
 
