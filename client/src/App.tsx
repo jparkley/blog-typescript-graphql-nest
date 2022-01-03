@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter } from 'react-router-dom'
+
 import Posts from './pages/Posts'
+import Header from './components/layout/Header'
 
 const GRAPHQL_URL = 'http://localhost:5000/graphql'
+
 const App: React.FC = () => {
 
   const [posts, setPosts] = useState([])
@@ -35,14 +39,13 @@ const App: React.FC = () => {
     getPosts()
   }, [])
 
-
    //const posts = [{"id":"post 2","content": "content2","author": "jp"}]
 
   return (
-    <div className="App">
-      Test
-      <Posts posts={posts} />
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Posts posts={posts} />    
+    </BrowserRouter>
   );
 }
 
