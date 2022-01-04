@@ -1,16 +1,14 @@
 import React from 'react';
-import { Post } from '../common/interfaces/PostInterface'
-import { PostsProps } from '../common/interfaces/PostsPropsInterface'
-// export interface PostsProps {
-//   posts: Post[]
-// }
+import { useGetposts } from '../hooks/useGetPosts';
 
-const Posts: React.FC<PostsProps> = ({posts}: PostsProps) => {
+const Posts: React.FC = () => {
+
+  const posts = useGetposts()
  
   return (
     <div className="App">
       <h2>Posts</h2>
-      <ul>{posts.map(post => {
+      <ul>{posts?.map(post => {
           return (<li key={post.id}>{post.content} by {post.author}</li>)
       })}</ul>
     </div>
