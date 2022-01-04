@@ -1,9 +1,9 @@
 import React from 'react';
 import { Post } from '../common/interfaces/PostInterface'
-
-interface PostsProps {
-  posts: Post[]
-}
+import { PostsProps } from '../common/interfaces/PostsPropsInterface'
+// export interface PostsProps {
+//   posts: Post[]
+// }
 
 const Posts: React.FC<PostsProps> = ({posts}: PostsProps) => {
  

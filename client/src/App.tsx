@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Posts from './pages/Posts'
 import Header from './components/layout/Header'
@@ -44,7 +44,10 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Posts posts={posts} />    
+      <Routes>
+        <Route path='/' element={<Posts posts={posts} />} />
+        <Route path='/about' />
+      </Routes>
     </BrowserRouter>
   );
 }
