@@ -1,10 +1,8 @@
 import React from 'react';
-import { useGetposts } from '../../hooks/useGetPosts';
+import { Post } from '../../common/interfaces/PostInterface';
 import PostSingle from './PostSingle';
 
-const PostList: React.FC = () => {
-
-    const posts = useGetposts()
+const PostList: React.FC<{posts: Post[]}> = ({posts}: {posts: Post[]}) => {    
    
     return (
       <div className="App">

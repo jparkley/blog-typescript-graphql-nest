@@ -1,12 +1,13 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/client'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import client from './common/apollo-client'
 import Header from './components/layout/Header'
-import Home from './pages/Home'
 import About from './pages/About'
+import Home from './pages/Home'
+
 
 const App: React.FC = () => {
+
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
