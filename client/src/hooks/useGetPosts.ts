@@ -13,7 +13,7 @@ const GET_POSTS = gql`
 `
 
 export const useGetposts = ():Post[] => {
-    const { data, loading, error  } = useQuery(GET_POSTS)
-
+    const { data } = useQuery(GET_POSTS)
+    // TODO: loading, error handling
     return data?.posts
 }

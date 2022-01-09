@@ -9,9 +9,13 @@ const Header: React.FC = () => {
                     <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
+                    <NavLink to="/posts">Posts</NavLink>
+                </li>
+                <li>
                     <NavLink to="/about">About</NavLink>
                 </li>
             </ul>            
+
         </header>
     )
 }
