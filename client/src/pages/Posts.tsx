@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import PostList from '../components/posts/PostList'
+import { useCreatePost } from '../hooks/useCreatePost'
 import { useGetposts } from '../hooks/useGetPosts'
 
 interface FormData {
@@ -11,10 +12,12 @@ interface FormData {
 const Posts:React.FC = () => {
     const posts = useGetposts()
     const { register, handleSubmit } = useForm<FormData>()
+    const createPost = useCreatePost()
 
     const onSubmit = handleSubmit(({title, content}) => {
         console.log(title);
-        console.log(content);                
+        console.log(content);        
+        createPost({ variables: {input: {title, content}}})        
     })
     
     return (
