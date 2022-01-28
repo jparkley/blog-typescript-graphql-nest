@@ -1,15 +1,23 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { BlogpostsController } from './blogposts/blogposts.controller';
-import { BlogpostsService } from './blogposts/blogposts.service';
+import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path/posix';
+import { BlogpostsModule } from './blogposts/blogposts.module';
+
+// GraphQLModule.forRoot(configuration object)
 
 @Module({
-  imports: [ConfigModule.forRoot({
-    isGlobal: true
-  })],
-  controllers: [AppController, BlogpostsController],
-  providers: [AppService, BlogpostsService],
+  imports: [
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      sortSchema: true
+    }),
+    ConfigModule.forRoot({
+      isGlobal: true
+    }), 
+    BlogpostsModule
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
