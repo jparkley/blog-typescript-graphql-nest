@@ -5,7 +5,7 @@
 type Blogpost {
   author: String!
   content: String!
-  id: String!
+  id: Int!
   title: String!
 }
 
