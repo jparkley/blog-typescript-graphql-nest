@@ -5,6 +5,7 @@
 /backend/.env
 /backend/ormconfig.json
 /backend/docker-compose.yml
+graphql-playground.txt
 
 .vscode/
 .graphqlconfig.yml
