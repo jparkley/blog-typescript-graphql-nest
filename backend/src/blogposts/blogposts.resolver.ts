@@ -1,4 +1,4 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Blogpost } from './blogpost.entity';
 import { BlogpostsService } from './blogposts.service';
 import { CreateBlogpostInput } from './dto/create-blogpost.input';
@@ -10,6 +10,11 @@ export class BlogpostsResolver {
     @Query(returns => [Blogpost])
     findAll(): Promise<Blogpost[]> {
         return this.blogpostService.findAll()
+    }
+
+    @Query(returns => Blogpost)
+    findOne(@Args('id', { type: () => Int }) id:number): Promise<Blogpost> {
+        return this.blogpostService.findOne(id)
     }
 
     @Mutation(returns => Blogpost)

@@ -21,4 +21,5 @@ type Mutation {
 
 type Query {
   findAll: [Blogpost!]!
+  findOne(id: Int!): Blogpost!
 }

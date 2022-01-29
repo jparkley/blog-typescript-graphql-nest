@@ -13,6 +13,10 @@ export class BlogpostsService {
         return this.blogpostRepo.find();
     }
 
+    async findOne(id:number): Promise<Blogpost> {
+        return this.blogpostRepo.findOneOrFail(id)
+    }
+
     createBlogpost(createBlogpostInput: CreateBlogpostInput): Promise<Blogpost> {
         const newBlogpost = this.blogpostRepo.create(createBlogpostInput);
         return this.blogpostRepo.save(newBlogpost);
