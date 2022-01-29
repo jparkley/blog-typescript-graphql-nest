@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Blogpost } from './blogpost.entity';
+import { CreateBlogpostInput } from './dto/create-blogpost.input';
 
 @Injectable()
 export class BlogpostsService {
@@ -10,5 +11,10 @@ export class BlogpostsService {
     
     async findAll(): Promise<Blogpost[]> {        
         return this.blogpostRepo.find();
+    }
+
+    createBlogpost(createBlogpostInput: CreateBlogpostInput): Promise<Blogpost> {
+        const newBlogpost = this.blogpostRepo.create(createBlogpostInput);
+        return this.blogpostRepo.save(newBlogpost);
     }
 }

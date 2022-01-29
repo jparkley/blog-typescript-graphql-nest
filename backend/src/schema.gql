@@ -9,6 +9,16 @@ type Blogpost {
   title: String!
 }
 
+input CreateBlogpostInput {
+  author: String!
+  content: String!
+  title: String!
+}
+
+type Mutation {
+  createBlogpost(createBlogpostInput: CreateBlogpostInput!): Blogpost!
+}
+
 type Query {
   findAll: [Blogpost!]!
 }
