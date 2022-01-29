@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import client from './common/apollo-client'
 import Header from './components/layout/Header'
 import About from './pages/About'
+import Blogposts from './pages/Blogposts'
 import Home from './pages/Home'
-import Posts from './pages/Posts'
 
 
 
@@ -16,7 +16,7 @@ const App: React.FC = () => {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/posts' element={<Posts />} />
+          <Route path='/blogposts' element={<Blogposts />} />
           <Route path='/about' element={<About />} />
         </Routes>
       </BrowserRouter>

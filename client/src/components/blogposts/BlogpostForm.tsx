@@ -1,21 +1,21 @@
-import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useCreatePost } from '../../hooks/useCreatePost'
+import { useCreateBlogpost } from '../../hooks/useCreateBlogpost'
 
 interface FormData {
     title: string
     content: string
+    author: string
 }
 
-const PostForm:React.FC = () => {
+const BlogpostForm:React.FC = () => {
     
     const { register, handleSubmit } = useForm<FormData>()
-    const createPost = useCreatePost()
+    const createBlogpost = useCreateBlogpost()
 
-    const onSubmit = handleSubmit(({title, content}) => {
+    const onSubmit = handleSubmit(({title, content, author}) => {
         console.log(title);
         console.log(content);        
-        createPost({ variables: {input: {title, content}}})        
+        createBlogpost({ variables: {input: {title, content, author}}})        
     })
     
     return (
@@ -23,6 +23,7 @@ const PostForm:React.FC = () => {
             <form onSubmit={onSubmit}>
                 <h2>New Post</h2>
                     <input type='text' {...register('title')} />
+                    <input type='text' {...register('author')} />
                     <textarea {...register('content')} />                
                     <button type='submit'>Submit</button>                
             </form>            
@@ -30,4 +31,4 @@ const PostForm:React.FC = () => {
     )
 }
 
-export default PostForm
+export default BlogpostForm
