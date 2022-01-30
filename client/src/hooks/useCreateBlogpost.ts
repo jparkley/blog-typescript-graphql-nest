@@ -1,4 +1,4 @@
-import { gql, useMutation } from '@apollo/client'
+import { gql, useMutation } from '@apollo/client';
 
 interface CreateBlogpostInput {
     variables: {
@@ -12,7 +12,7 @@ interface CreateBlogpostInput {
 
 const CREATE_POST = gql`
     mutation CreateBlogpost($input: CreateBlogpostInput!) {
-        createBlogpost(input: $input) {
+        createBlogpost(createBlogpostInput: $input) {
             id
             title
             content

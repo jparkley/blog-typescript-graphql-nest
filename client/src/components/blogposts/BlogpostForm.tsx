@@ -8,13 +8,12 @@ interface FormData {
 }
 
 const BlogpostForm:React.FC = () => {
-    
+
     const { register, handleSubmit } = useForm<FormData>()
     const createBlogpost = useCreateBlogpost()
 
     const onSubmit = handleSubmit(({title, content, author}) => {
         console.log(title);
-        console.log(content);        
         createBlogpost({ variables: {input: {title, content, author}}})        
     })
     
@@ -22,9 +21,10 @@ const BlogpostForm:React.FC = () => {
         <>
             <form onSubmit={onSubmit}>
                 <h2>New Post</h2>
-                    <input type='text' {...register('title')} />
-                    <input type='text' {...register('author')} />
+                    Title: <input type='text' {...register('title')} />
+                    Content:
                     <textarea {...register('content')} />                
+                    Author: <input type='text' {...register('author')} />
                     <button type='submit'>Submit</button>                
             </form>            
         </>
