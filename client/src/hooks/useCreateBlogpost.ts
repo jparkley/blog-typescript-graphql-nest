@@ -20,7 +20,7 @@ const CREATE_POST = gql`
         }
     }
 `
-
+// data: { ...createBlogpost, __typename: "Blogpost"},
 export const useCreateBlogpost = ():((createBlogpostInput: CreateBlogpostInput) => any) => {
     const [createBlogpost] = useMutation(CREATE_POST, {
         update(cache, { data: createBlogpost }) {
@@ -28,9 +28,10 @@ export const useCreateBlogpost = ():((createBlogpostInput: CreateBlogpostInput) 
                 fields: {
                     blogposts(curentBlogposts = []) {
                         const newBlogpostRef = cache.writeFragment({
+                            id: cache.identify(createBlogpost),
                             data: createBlogpost,
                             fragment: gql`
-                                fragment NewBlogpost on Post {
+                                fragment NewBlogpost on Blogpost {
                                     id,
                                     title,
                                     content,
