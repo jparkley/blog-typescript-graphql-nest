@@ -1,0 +1,26 @@
+service: blog-backend
+
+useDotenv: true
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  environment: 
+    PORT:${env:PORT}
+    DB_USERNAME:${env:DB_USERNAME}
+    DB_PASSWORD:${env:DB_PASSWORD}
+    DB_DATABASE:${env:DB_DATABASE}
+
+functions: 
+  main:
+    handler: dist/serverless.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'

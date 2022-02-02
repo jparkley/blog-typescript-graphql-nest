@@ -9,6 +9,7 @@ let server: Handler;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
   app.useGlobalPipes(new ValidationPipe())
   
   const configService = app.get(ConfigService)
@@ -20,7 +21,7 @@ async function bootstrap() {
   return serverlessExpress({ app: expressApp })
 }
 //bootstrap();
-export const hanlder: Handler = async (
+export const handler: Handler = async (
     event: any,
     context: Context,
     callback: Callback

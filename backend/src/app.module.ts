@@ -6,7 +6,6 @@ import { join } from 'path/posix';
 import { getConnectionOptions } from 'typeorm';
 import { BlogpostsModule } from './blogposts/blogposts.module';
 
-// GraphQLModule.forRoot(configuration object)
 // entities:  ['dist/**/*.entity{.ts,.js}'],
 // TypeOrmModule.forRoot(),
 
