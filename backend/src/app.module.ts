@@ -5,14 +5,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path/posix';
 import { BlogpostsModule } from './blogposts/blogposts.module';
 
-// GraphQLModule.forRoot(configuration object)
-// entities:  ['dist/**/*.entity{.ts,.js}'],
 
 // Module order is impoertant as the ConfigModule load env variables.
-
 @Module({
   imports: [
     ConfigModule.forRoot({
+      envFilePath: !process.env.NODE_ENV ? '.env' : `.env.${process.env.NODE_ENV}`,
       isGlobal: true
     }),     
     GraphQLModule.forRoot({
