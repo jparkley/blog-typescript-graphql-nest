@@ -3,7 +3,8 @@
 /server
 /backend/dist
 /backend/.env
-/backend/ormconfig.json
+/backend/.env.prod
+/backend/ormconfig*
 /backend/docker-compose.yml
 graphql-playground.txt
 
