@@ -1,5 +1,6 @@
 ## Prepare code
     # backend
+        typeorm migration
     # client
 
 ## Set up AWS EC2 instance
@@ -12,5 +13,7 @@
     => install postgres
     => get the db ready
     => test app to see all the modules initialized fine
+
+    => http server
 
 ## Set up AWS CICD

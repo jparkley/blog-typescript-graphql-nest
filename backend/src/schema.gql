@@ -6,6 +6,7 @@ type Blogpost {
   author: String!
   content: String!
   id: Int!
+  likes: Int!
   title: String!
 }
 

@@ -19,4 +19,8 @@ export class Blogpost {
     @Column()
     @Field()
     author: string;
+
+    @Column({ nullable: true })
+    @Field(type => Int)
+    likes: number
 }
