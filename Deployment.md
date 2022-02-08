@@ -1,32 +1,42 @@
+### Deployment Progress
+
 ## Prepare code
 
-    # backend
+    # Backend(folder: backend)
         [v] typeorm migration & package scripts
-    # client
+    # Frontend(folder: client)
 
 ## Set up AWS EC2 instance
 
-    New instance: Ubuntu 20.04, t2 micro(free tier)
-    => [v] connect to it via SSH
-    => [v] install nvm
-    => [v] nvm i 16.13.1 (?)
-    => [v] install packages
-    => [v] exit and login int again
-    => [v] install postgres
-    => [v] get the db ready
-    => [v] run migration: ormconfig.prod.txt
-    => [v] Backend: test app to see all the modules initialized fine
+    => [v] New instance: Ubuntu 20.04, t2 micro(free tier)
+        Set up Security Groups
+        Verify VPC and Subnet
+        Verify Route Table
+        Verify Network ACL
 
-    => Frontend(client): set up http server
-        [v] install nginx
-        [v] create folder to serve the front-end (chamgo.com)
-            => change owner: 'sudo chown -R $USER:$USER chamgo.com'
-        [v] build client ('npm run build')
-        [v] copy built static files to nginx serving(?) directory (cp -r ~/chamgo/client/build/* ~/var/www/chamgo.com/)
-        [v] configure nginx server
+    => [v] Connect to it via SSH
+    => [v] Install nvm (node version 16.13.1 (?))
+
+    => [v] Set up Postgres database
+        [v] npm install packages
+        [v] Install postgres
+        [v] Get the db ready (db username, password, database...)
+        [v] Run migration (config: ormconfig.prod.txt)
+        [v] Test app to see all the modules initialized fine including TypeORMModule
+
+    => [v] Set up http server
+        [v] Install nginx
+        [v] Create folder to serve the front-end (chamgo.com)
+            [v] Change owner: 'sudo chown -R $USER:$USER chamgo.com'
+        [v] Build client ('npm run build')
+        [v] Copy built static files to nginx serving(?) directory (cp -r ~/chamgo/client/build/* ~/var/www/chamgo.com/)
+        [v] Configure nginx server
             /etc/nginx/sites-available
 
-    => connect backend and frontend
+    => [v] Set up PM2 for Backend
+
+    => Connect Backend and Frontend
+
 
         ? update server blocks, map to client and /graphql to server
         ? build client files and copy them to where nginx is serving from
