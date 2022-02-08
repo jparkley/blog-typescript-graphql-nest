@@ -34,11 +34,12 @@
             /etc/nginx/sites-available
 
     => [v] Set up PM2 for Backend
-
-    => Connect Backend and Frontend
-
-
-        ? update server blocks, map to client and /graphql to server
-        ? build client files and copy them to where nginx is serving from
+        [v] Install PM2
+        [v] Configure reverse proxy(/etc/nginx/sites-available)
+        [v] Copy .env.prod to .env before build
+        [v] Start PM2 with the dist
+        => Backend and Frontend connected!!
 
 ## Set up AWS CICD
+
+    long way to go....

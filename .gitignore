@@ -7,6 +7,11 @@
 /backend/ormconfig*
 /backend/docker-compose.yml
 graphql-playground.txt
+/client/build/
+
+backend/appspec.yml
+backend/log-20220205.txt
+backend/scripts/
 
 .vscode/
 .graphqlconfig.yml
