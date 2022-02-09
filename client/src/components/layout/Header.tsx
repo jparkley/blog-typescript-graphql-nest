@@ -1,23 +1,11 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import Navbar from "../styles/Navbar";
 
 const Header: React.FC = () => {
-    return (
-        <header>
-            <ul>
-                <li>
-                    <NavLink to="/">Home</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/blogposts">Posts</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/about">About</NavLink>
-                </li>
-            </ul>            
+  return (
+    <header>
+      <Navbar />
+    </header>
+  );
+};
 
-        </header>
-    )
-}
-
-export default Header
+export default Header;
