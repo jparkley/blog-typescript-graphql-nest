@@ -15,13 +15,13 @@
         Verify Network ACL
 
     => [v] Connect to it via SSH
-    => [v] Install nvm (node version 16.13.1 (?))
+    => [v] Install nvm (node version 16.13.1)
 
     => [v] Set up Postgres database
         [v] npm install packages
         [v] Install postgres
         [v] Get the db ready (db username, password, database...)
-        [v] Run migration (config: ormconfig.prod.txt)
+        [v] Run migration (config: ormconfig.prod.json)
         [v] Test app to see all the modules initialized fine including TypeORMModule
 
     => [v] Set up http server
@@ -29,7 +29,7 @@
         [v] Create folder to serve the front-end (chamgo.com)
             [v] Change owner: 'sudo chown -R $USER:$USER chamgo.com'
         [v] Build client ('npm run build')
-        [v] Copy built static files to nginx serving(?) directory (cp -r ~/chamgo/client/build/* ~/var/www/chamgo.com/)
+        [v] Copy built static files to nginx serving directory (cp -r ~/chamgo/client/build/* ~/var/www/chamgo.com/)
         [v] Configure nginx server
             /etc/nginx/sites-available
 
