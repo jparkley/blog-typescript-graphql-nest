@@ -1,3 +1,4 @@
+import { ButtonStyled } from "../Button/Button.styled";
 import {
   BrandStyled,
   LinkStyled,
@@ -17,6 +18,7 @@ const Navbar = () => {
         <LinkStyled href="/blogposts">Posts</LinkStyled>
         <LinkStyled href="/about">About</LinkStyled>
       </NavbarMenuStyled>
+      <ButtonStyled color="primary"></ButtonStyled>
     </NavbarStyled>
   );
 };
