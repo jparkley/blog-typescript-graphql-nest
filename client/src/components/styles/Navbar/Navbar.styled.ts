@@ -18,6 +18,7 @@ export const BrandStyled = styled.div`
   align-items: center;
   a {
     font-size: 16px;
+    font-weight: 500;
     color: teal;
     text-decoration: none;
     padding: 0.5rem 1rem;

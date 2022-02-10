@@ -1,14 +1,32 @@
 import styled, { css } from "styled-components";
 
-export const ButtonStyled = styled.button`
+interface ButtonProps {
+  readonly color?: string;
+}
+
+// css`
+// background: ${(props) => props.theme[props.color]};
+// `}
+
+export const ButtonStyled = styled.button<ButtonProps>`
   /* background-color: "#28a745"; */
   ${(props) =>
     props.color &&
     css`
-      background: ${(props) => props.theme[props.color]};
+      background-color: ${props.theme[props.color]};
     `}
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
 
-  margin-left: 20px;
-  margin-bottom: 10px;
-  display: "inline";
+  border: 2px solid transparent;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  vertical-align: middle;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 `;

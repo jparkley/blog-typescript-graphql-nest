@@ -18,7 +18,7 @@ const Navbar = () => {
         <LinkStyled href="/blogposts">Posts</LinkStyled>
         <LinkStyled href="/about">About</LinkStyled>
       </NavbarMenuStyled>
-      <ButtonStyled color="primary"></ButtonStyled>
+      <ButtonStyled color="primary">Log Out</ButtonStyled>
     </NavbarStyled>
   );
 };

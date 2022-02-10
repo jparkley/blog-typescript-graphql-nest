@@ -3,14 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import client from "./common/apollo-client";
 import Header from "./components/layout/Header";
+import GlobalStyle from "./components/styles/globals";
 import About from "./pages/About";
 import Blogposts from "./pages/Blogposts";
 import Home from "./pages/Home";
-
 const theme = {
   font: "",
-  primary: "teal",
-  secondary: "",
+  primary: "#17a2b8",
+  secondary: "green",
+  alert: "red",
+  warning: "yellow",
   background: "",
 };
 
@@ -19,6 +21,7 @@ const App: React.FC = () => {
     <ApolloProvider client={client}>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
+          <GlobalStyle />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
