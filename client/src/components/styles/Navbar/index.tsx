@@ -1,25 +1,22 @@
-import { NavLink } from "react-router-dom";
-import { BrandStyled } from "./Brand.styled";
-import { NavbarStyled } from "./Navbar.styled";
+import {
+  BrandStyled,
+  LinkStyled,
+  NavbarMenuStyled,
+  NavbarStyled,
+} from "./Navbar.styled";
+
 const Navbar = () => {
   return (
     <NavbarStyled>
       <BrandStyled>
         {/* <img src="./logo.png" alt="Logo" /> */}
-        <h2>ChamGo Blog</h2>
+        <a href="/">ChamGo</a>
       </BrandStyled>
-
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/blogposts">Posts</NavLink>
-        </li>
-        <li>
-          <NavLink to="/about">About</NavLink>
-        </li>
-      </ul>
+      <NavbarMenuStyled>
+        <LinkStyled href="/">Home</LinkStyled>
+        <LinkStyled href="/blogposts">Posts</LinkStyled>
+        <LinkStyled href="/about">About</LinkStyled>
+      </NavbarMenuStyled>
     </NavbarStyled>
   );
 };
