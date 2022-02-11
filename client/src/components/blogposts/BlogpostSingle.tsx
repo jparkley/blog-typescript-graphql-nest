@@ -1,12 +1,20 @@
-import { Blogpost } from '../../common/interfaces/BlogpostInterface'
+import { Blogpost } from "../../common/interfaces/BlogpostInterface";
+import { CardBodyStyled, CardHeaderStyled } from "../styles/Card.styled";
 
-const BlogpostSingle:React.FC<{blogpost: Blogpost}> = ({blogpost}: {blogpost:Blogpost}) => {
-    return (
-        <div>
-           {blogpost.title} - {blogpost.author}
-           <div>{blogpost.content}</div>
-        </div>
-    )
-}
+const BlogpostSingle: React.FC<{ blogpost: Blogpost }> = ({
+  blogpost,
+}: {
+  blogpost: Blogpost;
+}) => {
+  return (
+    <>
+      <CardHeaderStyled>
+        {blogpost.title} - {blogpost.author}
+      </CardHeaderStyled>
 
-export default BlogpostSingle
+      <CardBodyStyled>{blogpost.content}</CardBodyStyled>
+    </>
+  );
+};
+
+export default BlogpostSingle;

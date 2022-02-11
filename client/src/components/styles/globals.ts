@@ -22,7 +22,6 @@ export default createGlobalStyle`
     }    
 
     html {
-        color: orange;
+        /* color: orange; */
     }
-
 `;
