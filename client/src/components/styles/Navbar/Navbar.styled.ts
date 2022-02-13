@@ -1,25 +1,22 @@
 import styled from "styled-components";
+import { theme } from "./../globals";
 
 export const NavbarStyled = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 14px 6px;
+  padding: 10px 6px;
   margin: 0 auto;
-
-  border-radius: 0 25px 225px 0/25px 0 25px 255px;
-  border-width: 0 0 2px;
-  border-color: #154360;
-  border-style: solid;
+  background-color: ${theme.background};
 `;
 
 export const BrandStyled = styled.div`
   display: flex;
   align-items: center;
   a {
+    color: ${theme.primary};
     font-family: "Permanent Marker", cursive;
-    font-size: 2rem;
-    text-decoration: none;
+    font-size: 1.8rem;
     padding: 0.5rem 1rem;
   }
   img {
@@ -34,14 +31,15 @@ export const BrandLogoStyled = styled.img`
 `;
 
 export const LinkStyled = styled.a`
-  text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0 1.2rem;
 `;
 export const NavbarMenuStyled = styled.div`
   display: flex;
   align-items: center;
+  padding-top: 2px;
   a {
+    color: ${theme.primary};
     font-family: "Josefin Sans", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 `;

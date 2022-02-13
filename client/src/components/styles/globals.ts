@@ -2,36 +2,32 @@ import { createGlobalStyle } from "styled-components";
 
 export const theme = {
   font: "",
-  primary: "#17a2b8",
-  secondary: "green",
-  alert: "red",
-  warning: "yellow",
-  background: "",
+  primary: "#1A374D",
+  secondary: "#504f4f",
+  alert: "#BB6464",
+  warning: "#F1E0AC",
+  background: "#FBF5ED",
 };
 
 export default createGlobalStyle`    
-    * {
+    :root {
+        margin: 0;
         padding: 0;
-        box-sizing: border-box;
         outline: 0;
+        box-sizing: border-box;
+        /* --color: #504f4f;
+        --color-medium: #1A374D;
+        --color-light: #7f8c8d;
+        --background-color: #FBF5ED; */
     }
 
-    #root {
-        margin: 0 auto;
-    }    
-
-    html {
-        color: '#1B2631';
-        /* font-family: 'Source Sans Pro', sans-serif; */
+    body {
+        color: ${theme.primary};
         font-family: 'Nunito', sans-serif;
-        font-weight: 400;        
+        font-weight: 400;
     }
 
     a {
-        color: teal;
-        cursor: pointer;
-        &:hover {
-            color: '#2E4053';
-        }
+        text-decoration: none;
     }
 `;
