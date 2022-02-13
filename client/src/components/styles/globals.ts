@@ -9,10 +9,9 @@ export const theme = {
   background: "",
 };
 
-export default createGlobalStyle`
+export default createGlobalStyle`    
     * {
         padding: 0;
-        margin: 0;
         box-sizing: border-box;
         outline: 0;
     }
@@ -22,6 +21,17 @@ export default createGlobalStyle`
     }    
 
     html {
-        /* color: orange; */
+        color: '#1B2631';
+        /* font-family: 'Source Sans Pro', sans-serif; */
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;        
+    }
+
+    a {
+        color: teal;
+        cursor: pointer;
+        &:hover {
+            color: '#2E4053';
+        }
     }
 `;

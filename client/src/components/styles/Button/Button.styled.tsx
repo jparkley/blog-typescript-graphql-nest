@@ -4,12 +4,7 @@ interface ButtonProps {
   readonly color?: string;
 }
 
-// css`
-// background: ${(props) => props.theme[props.color]};
-// `}
-
 export const ButtonStyled = styled.button<ButtonProps>`
-  /* background-color: "#28a745"; */
   ${(props) =>
     props.color &&
     css`

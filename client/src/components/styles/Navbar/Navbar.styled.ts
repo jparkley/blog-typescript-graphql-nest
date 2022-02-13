@@ -17,9 +17,8 @@ export const BrandStyled = styled.div`
   display: flex;
   align-items: center;
   a {
-    font-size: 16px;
-    font-weight: 500;
-    color: teal;
+    font-family: "Permanent Marker", cursive;
+    font-size: 2rem;
     text-decoration: none;
     padding: 0.5rem 1rem;
   }
@@ -35,19 +34,14 @@ export const BrandLogoStyled = styled.img`
 `;
 
 export const LinkStyled = styled.a`
-  font-size: 14px;
-  color: teal;
   text-decoration: none;
   padding: 0.5rem 1rem;
 `;
 export const NavbarMenuStyled = styled.div`
   display: flex;
   align-items: center;
-
   a {
-    font-size: 14px;
-    color: teal;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.4rem;
   }
 `;
