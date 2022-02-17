@@ -5,7 +5,7 @@ export const NavbarStyled = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 6px;
+  padding: 10px 20px;
   margin: 0 auto;
   background-color: ${theme.background};
 `;
@@ -42,4 +42,13 @@ export const NavbarMenuStyled = styled.div`
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.2rem;
   }
+`;
+
+export const SearchStyled = styled.div`
+  display: block;
+  padding: 20px;
+  min-width: 160px;
+  font-family: "Amiri", serif;
+  font-size: 1.2rem;
+  font-style: italic;
 `;

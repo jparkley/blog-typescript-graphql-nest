@@ -1,4 +1,9 @@
 import styled from "styled-components";
+
+interface Props {
+  justifyContent: string;
+}
+
 export const WrapperStyled = styled.div`
   flex-direction: column;
   height: 100%;
@@ -26,4 +31,11 @@ export const ContainerGridStyled = styled.div`
   grid-template-columns: repeat(3, 280px);
   grid-gap: 30px;
   grid-auto-rows: minmax(200px, auto);
+`;
+
+export const ContainerFlexStyled = styled.div<Props>`
+  display: flex;
+  align-items: center;
+  justify-content: ${(p) => p.justifyContent};
+  width: 100%;
 `;

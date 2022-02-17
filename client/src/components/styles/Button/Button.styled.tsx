@@ -12,16 +12,9 @@ export const ButtonStyled = styled.button<ButtonProps>`
     `}
   color: #fff;
   cursor: pointer;
-  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
   font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-
-  border: 2px solid transparent;
-  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
-  vertical-align: middle;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid transparent;
+  padding: 0.5rem;
 `;

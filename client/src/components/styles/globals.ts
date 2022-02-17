@@ -7,6 +7,7 @@ export const theme = {
   alert: "#BB6464",
   warning: "#F1E0AC",
   background: "#FBF5ED",
+  backgroundLight: "#398AB9",
 };
 
 export default createGlobalStyle`    
