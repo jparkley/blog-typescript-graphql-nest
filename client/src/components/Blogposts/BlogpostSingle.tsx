@@ -1,5 +1,5 @@
-import { Blogpost } from "../../common/interfaces/BlogpostInterface";
-import { CardBodyStyled, CardHeaderStyled } from "../styles/Card.styled";
+import { Blogpost } from "../../interfaces/BlogpostInterface";
+import { CardBodyStyled, CardHeaderStyled } from "../styled/Card.styled";
 
 const BlogpostSingle: React.FC<{ blogpost: Blogpost }> = ({
   blogpost,

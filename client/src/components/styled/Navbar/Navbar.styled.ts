@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { theme } from "./../globals";
+import { theme } from "../globals";
 
-export const NavbarStyled = styled.div`
+export const Navbar = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -10,7 +10,7 @@ export const NavbarStyled = styled.div`
   background-color: ${theme.background};
 `;
 
-export const BrandStyled = styled.div`
+export const Brand = styled.div`
   display: flex;
   align-items: center;
   a {
@@ -25,15 +25,7 @@ export const BrandStyled = styled.div`
   }
 `;
 
-export const BrandLogoStyled = styled.img`
-  width: 30px;
-  height: 30px;
-`;
-
-export const LinkStyled = styled.a`
-  padding: 0 1.2rem;
-`;
-export const NavbarMenuStyled = styled.div`
+export const NavbarMenu = styled.div`
   display: flex;
   align-items: center;
   padding-top: 2px;
@@ -44,7 +36,16 @@ export const NavbarMenuStyled = styled.div`
   }
 `;
 
-export const SearchStyled = styled.div`
+export const NavbarLink = styled.a`
+  padding: 0 1.2rem;
+`;
+
+export const BrandLogoStyled = styled.img`
+  width: 30px;
+  height: 30px;
+`;
+
+export const Search = styled.div`
   display: block;
   padding: 20px;
   min-width: 160px;

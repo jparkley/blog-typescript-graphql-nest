@@ -1,5 +1,5 @@
-import BlogpostForm from "../components/blogposts/BlogpostForm";
-import BlogpostList from "../components/blogposts/BlogpostList";
+import BlogpostForm from "../components/Blogposts/BlogpostForm";
+import BlogpostList from "../components/Blogposts/BlogpostList";
 import { useGetBlogposts } from "../hooks/useGetBlogposts";
 
 const Blogposts: React.FC = () => {

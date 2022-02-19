@@ -1,4 +1,4 @@
-import Navbar from "../styles/Navbar";
+import Navbar from "./styled/Navbar";
 
 const Header: React.FC = () => {
   return (
