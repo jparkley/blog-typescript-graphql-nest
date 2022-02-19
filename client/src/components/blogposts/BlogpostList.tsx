@@ -1,5 +1,5 @@
 import React from "react";
-import { Blogpost } from "../../common/interfaces/BlogpostInterface";
+import { Blogpost } from "../../interfaces/BlogpostInterface";
 import { CardStyled } from "../styles/Card.styled";
 import {
   ContainerGridStyled,
