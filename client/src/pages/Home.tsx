@@ -1,4 +1,4 @@
-import BlogpostList from "../components/blogposts/BlogpostList";
+import BlogpostList from "../components/Blogposts/BlogpostList";
 import { useGetBlogposts } from "../hooks/useGetBlogposts";
 
 const Home = () => {

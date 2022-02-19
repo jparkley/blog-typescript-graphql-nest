@@ -1,32 +1,26 @@
 import { ButtonStyled } from "../Button/Button.styled";
 import { ContainerFlexStyled } from "../Container/Container.styled";
-import {
-  BrandStyled,
-  LinkStyled,
-  NavbarMenuStyled,
-  NavbarStyled,
-  SearchStyled,
-} from "./Navbar.styled";
+import * as Styled from "./Navbar.styled";
 
 const Navbar = () => {
   return (
-    <NavbarStyled>
-      <BrandStyled>
+    <Styled.Navbar>
+      <Styled.Brand>
         {/* <img src="./logo.png" alt="Logo" /> */}
         <a href="/">ChamGo</a>
-      </BrandStyled>
+      </Styled.Brand>
       <ContainerFlexStyled justifyContent="space-between">
-        <NavbarMenuStyled>
-          <LinkStyled href="/">Home</LinkStyled>
-          <LinkStyled href="/blogposts">Posts</LinkStyled>
-          <LinkStyled href="/about">About</LinkStyled>
-        </NavbarMenuStyled>
+        <Styled.NavbarMenu>
+          <Styled.NavbarLink href="/">Home</Styled.NavbarLink>
+          <Styled.NavbarLink href="/blogposts">Posts</Styled.NavbarLink>
+          <Styled.NavbarLink href="/about">About</Styled.NavbarLink>
+        </Styled.NavbarMenu>
         <ContainerFlexStyled justifyContent="flex-end">
-          <SearchStyled>Search here...</SearchStyled>
+          <Styled.Search>Search here...</Styled.Search>
           <ButtonStyled color="backgroundLight">Log Out</ButtonStyled>
         </ContainerFlexStyled>
       </ContainerFlexStyled>
-    </NavbarStyled>
+    </Styled.Navbar>
   );
 };
 
