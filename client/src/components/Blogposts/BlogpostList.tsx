@@ -14,7 +14,6 @@ const BlogpostList: React.FC<{ blogposts: Blogpost[] }> = ({
 }) => {
   return (
     <WrapperStyled>
-      <h2>Recently Added</h2>
       <ContainerGridStyled>
         {blogposts?.map((blogpost) => {
           return (

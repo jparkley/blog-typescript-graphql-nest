@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface Props {
   justifyContent: string;
+  paddingTop?: string;
 }
 
 export const WrapperStyled = styled.div`
@@ -38,4 +39,9 @@ export const ContainerFlexStyled = styled.div<Props>`
   align-items: center;
   justify-content: ${(p) => p.justifyContent};
   width: 100%;
+  padding-top: ${(p) => p.paddingTop};
+  p {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 `;
