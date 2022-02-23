@@ -1,5 +1,5 @@
-import { Blogpost } from './BlogpostInterface';
+import { Blogpost } from "./BlogpostInterface";
 
 export interface PostsProps {
-    posts: Blogpost[]
-  }
+  posts: Blogpost[];
+}
