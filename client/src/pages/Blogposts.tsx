@@ -1,15 +1,11 @@
 import BlogpostForm from "../components/Blogposts/BlogpostForm";
-import BlogpostList from "../components/Blogposts/BlogpostList";
-import { useGetBlogposts } from "../hooks/useGetBlogposts";
+import PageTitle from "../components/PageTitle";
 
 const Blogposts: React.FC = () => {
-  const blogposts = useGetBlogposts();
-
   return (
     <>
+      <PageTitle title="Add New Post" />
       <BlogpostForm />
-      <h2>Posts</h2>
-      <BlogpostList blogposts={blogposts} />
     </>
   );
 };

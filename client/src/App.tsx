@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import client from "./common/apollo-client";
 import Header from "./components/Header";
-import PageTitle from "./components/PageTitle";
 import { ContainerStyled } from "./components/styled/Container/Container.styled";
 import GlobalStyle, { theme } from "./components/styled/globals";
 import About from "./pages/About";
@@ -16,7 +15,6 @@ const App: React.FC = () => {
         <BrowserRouter>
           <GlobalStyle />
           <Header />
-          <PageTitle title="Recent Posts" />
           <ContainerStyled>
             <Routes>
               <Route path="/" element={<Home />} />
