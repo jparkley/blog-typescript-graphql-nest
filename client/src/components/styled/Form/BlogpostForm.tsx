@@ -1,13 +1,15 @@
 import * as Styled from "./Form.styled";
 
-const Form: React.FC = () => {
+const BlogpostForm: React.FC = () => {
   return (
     <Styled.Form>
       <Styled.FormControl>
         <Styled.Label>Title</Styled.Label>
         <Styled.Input />
+
         <Styled.Label>Content</Styled.Label>
-        <Styled.Input />
+        <Styled.TextArea />
+
         <Styled.Label>Author</Styled.Label>
         <Styled.Input />
         <Styled.Button>Add</Styled.Button>
@@ -15,4 +17,4 @@ const Form: React.FC = () => {
     </Styled.Form>
   );
 };
-export default Form;
+export default BlogpostForm;

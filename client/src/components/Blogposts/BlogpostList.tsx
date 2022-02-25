@@ -18,7 +18,10 @@ const BlogpostList: React.FC<{ blogposts: Blogpost[] }> = ({
         {blogposts?.map((blogpost) => {
           return (
             <CardStyled key={blogpost.id}>
-              <BlogpostSingle blogpost={blogpost} />
+              <BlogpostSingle
+                blogpost={blogpost}
+                options={{ editable: false }}
+              />
             </CardStyled>
           );
         })}
