@@ -7,14 +7,14 @@ export const Navbar = styled.div`
   align-items: center;
   padding: 10px 20px;
   margin: 0 auto;
-  background-color: ${theme.background};
+  background-color: ${theme.bgLightCreme};
 `;
 
 export const Brand = styled.div`
   display: flex;
   align-items: center;
   a {
-    color: ${theme.primary};
+    color: ${theme.textDark1};
     font-family: "Permanent Marker", cursive;
     font-size: 1.8rem;
     padding: 0.5rem 1rem;
@@ -30,7 +30,7 @@ export const NavbarMenu = styled.div`
   align-items: center;
   padding-top: 2px;
   a {
-    color: ${theme.primary};
+    color: ${theme.textDark1};
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.2rem;
   }

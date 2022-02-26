@@ -5,7 +5,7 @@ interface Props {
 }
 const PageTitle: React.FC<{ title: string }> = ({ title }: Props) => {
   return (
-    <ContainerFlexStyled justifyContent="center">
+    <ContainerFlexStyled justifyContent="center" spacing="0px">
       <p>{title}</p>
     </ContainerFlexStyled>
   );

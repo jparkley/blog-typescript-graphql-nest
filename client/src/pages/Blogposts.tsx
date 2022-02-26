@@ -5,7 +5,7 @@ const Blogposts: React.FC = () => {
   return (
     <>
       <PageTitle title="Add New Post" />
-      <BlogpostSingle options={{ editable: false }} />
+      <BlogpostSingle options={{ editable: true }} />
     </>
   );
 };

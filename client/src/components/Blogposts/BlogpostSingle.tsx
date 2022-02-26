@@ -14,8 +14,10 @@ interface Options {
 }
 
 const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
+  options,
   blogpost,
 }: {
+  options: Options;
   blogpost?: Blogpost;
 }) => {
   const { register, handleSubmit } = useForm<FormData>();
@@ -28,7 +30,8 @@ const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
 
   return (
     <>
-      <BlogpostForm></BlogpostForm>
+      {options.editable && <BlogpostForm />}
+
       <form onSubmit={onSubmit}>
         Title: <input type="text" {...register("title")} />
         Content:

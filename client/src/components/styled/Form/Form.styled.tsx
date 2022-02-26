@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { v } from "../variables";
 
 export const Form = styled.form`
   width: 70%;
-  padding: ${v.largeSpacing};
+  padding: ${({ theme }) => theme.spacingMin};
   margin: 0 auto;
 `;
 
@@ -24,7 +23,7 @@ export const Input = styled.input`
   //display: inline-block;
   outline: none;
   width: 500px;
-  margin-bottom: calc(${v.largeSpacing} / 4);
+  margin-bottom: ${({ theme }) => theme.spacingMin};
 `;
 
 export const TextArea = styled.textarea`
@@ -48,6 +47,6 @@ export const Button = styled.button`
   display: block;
   outline: none;
   width: 300px;
-  margin-top: calc(${v.largeSpacing} / 3);
+
   justify-content: flex;
 `;

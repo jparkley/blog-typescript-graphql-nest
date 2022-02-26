@@ -1,6 +1,5 @@
 import React from "react";
 import { Blogpost } from "../../interfaces/BlogpostInterface";
-import { CardStyled } from "../styled/Card.styled";
 import {
   ContainerGridStyled,
   WrapperStyled,
@@ -17,12 +16,11 @@ const BlogpostList: React.FC<{ blogposts: Blogpost[] }> = ({
       <ContainerGridStyled>
         {blogposts?.map((blogpost) => {
           return (
-            <CardStyled key={blogpost.id}>
-              <BlogpostSingle
-                blogpost={blogpost}
-                options={{ editable: false }}
-              />
-            </CardStyled>
+            <BlogpostSingle
+              key={blogpost.id}
+              blogpost={blogpost}
+              options={{ editable: false }}
+            />
           );
         })}
       </ContainerGridStyled>

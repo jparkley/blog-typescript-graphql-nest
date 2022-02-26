@@ -20,6 +20,6 @@ export const ButtonStyled = styled.button<ButtonProps>`
   padding: 0.5rem;
   &:hover {
     background-color: #eee;
-    color: ${theme.primary};
+    color: ${theme.textDark1};
   }
 `;
