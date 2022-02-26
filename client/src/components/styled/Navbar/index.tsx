@@ -1,4 +1,4 @@
-import { ButtonStyled } from "../Button/Button.styled";
+import { ButtonDark } from "../Button/Button.styled";
 import { ContainerFlexStyled } from "../Container/Container.styled";
 import * as Styled from "./Navbar.styled";
 
@@ -17,7 +17,7 @@ const Navbar = () => {
         </Styled.NavbarMenu>
         <ContainerFlexStyled justifyContent="flex-end">
           <Styled.Search>Search here...</Styled.Search>
-          <ButtonStyled color="backgroundLight">Log Out</ButtonStyled>
+          <ButtonDark color="backgroundLight">Log Out</ButtonDark>
         </ContainerFlexStyled>
       </ContainerFlexStyled>
     </Styled.Navbar>

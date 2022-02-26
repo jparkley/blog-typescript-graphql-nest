@@ -1,18 +1,14 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  width: 70%;
+  width: 80%;
   padding: ${({ theme }) => theme.spacingMin};
   margin: 0 auto;
-`;
-
-export const FormControl = styled.div`
-  width: 80%;
   display: grid;
   gap: 10px;
   grid-template-columns: 100px 1fr;
-  /* background-color: #c9c8c8; */
 `;
+
 export const Label = styled.span`
   //display: inline-block;
   font-weight: 500;
@@ -23,6 +19,7 @@ export const Input = styled.input`
   //display: inline-block;
   outline: none;
   width: 500px;
+  line-height: 1.2rem;
   margin-bottom: ${({ theme }) => theme.spacingMin};
 `;
 
@@ -42,11 +39,11 @@ export const TextArea = styled.textarea`
   width: 500px;
 `;
 
-export const Button = styled.button`
-  cursor: pointer;
-  display: block;
-  outline: none;
-  width: 300px;
+// export const Button = styled.button`
+//   cursor: pointer;
+//   display: block;
+//   outline: none;
+//   width: 300px;
 
-  justify-content: flex;
-`;
+//   justify-content: flex;
+// `;
