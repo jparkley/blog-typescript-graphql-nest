@@ -13,6 +13,7 @@ export const ButtonDark = styled.button<ButtonProps>`
   font-size: 0.9rem;
   font-weight: 400;
   border: 1px solid transparent;
+  border-radius: 2px;
   padding: 0.5rem;
   &:hover {
     background-color: #eee;

@@ -1,18 +1,40 @@
+import { FormElement } from "../../../interfaces/FormElementInterface";
 import { ButtonDark } from "../Button/Button.styled";
 import * as Styled from "./Form.styled";
 
-const BlogpostForm: React.FC = () => {
+interface MyForm {
+  formElements: FormElement[];
+  buttonText: string;
+  onSubmit: any;
+}
+/*
+const BlogpostForm: React.FC<{
+    formElements: FormElement[];
+    buttonText: string;
+    onSubmit: any;
+  }> = ({ formElements, buttonText, onSubmit }: MyForm) => {
+*/
+const BlogpostForm: React.FC<MyForm> = ({
+  formElements,
+  buttonText,
+  onSubmit,
+}: MyForm) => {
+  console.log("onsubmit", onSubmit);
+
   return (
     <Styled.Form>
-      <Styled.Label>Title</Styled.Label>
-      <Styled.Input />
-
-      <Styled.Label>Content</Styled.Label>
-      <Styled.TextArea />
-
-      <Styled.Label>Author</Styled.Label>
-      <Styled.Input />
-      <ButtonDark>Add</ButtonDark>
+      {formElements.map(
+        (
+          { label, name, inputType }: FormElement,
+          index: number
+        ): JSX.Element => (
+          <>
+            <Styled.Label>{label}</Styled.Label>
+            {inputType === "textarea" ? <Styled.TextArea /> : <Styled.Input />}
+          </>
+        )
+      )}
+      <ButtonDark>{buttonText}</ButtonDark>
     </Styled.Form>
   );
 };

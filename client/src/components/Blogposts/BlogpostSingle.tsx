@@ -4,14 +4,33 @@ import { Blogpost } from "../../interfaces/BlogpostInterface";
 import { CardBodyStyled, CardHeaderStyled } from "../styled/Card.styled";
 import BlogpostForm from "../styled/Form/BlogpostForm";
 
-interface FormData {
+interface BlogpostForm {
   title: string;
   content: string;
   author: string;
 }
+
 interface Options {
   editable: boolean;
 }
+
+const formElements = [
+  {
+    label: "Title",
+    name: "title",
+    inputType: "text",
+  },
+  {
+    label: "Content",
+    name: "content",
+    inputType: "textarea",
+  },
+  {
+    label: "Author",
+    name: "author",
+    inputType: "text",
+  },
+];
 
 const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
   options,
@@ -20,7 +39,7 @@ const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
   options: Options;
   blogpost?: Blogpost;
 }) => {
-  const { register, handleSubmit } = useForm<FormData>();
+  const { register, handleSubmit } = useForm<BlogpostForm>();
   const createBlogpost = useCreateBlogpost();
 
   const onSubmit = handleSubmit(({ title, content, author }) => {
@@ -30,7 +49,13 @@ const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
 
   return (
     <>
-      {options.editable && <BlogpostForm />}
+      {options.editable && (
+        <BlogpostForm
+          formElements={formElements}
+          buttonText="add"
+          onSubmit={onSubmit}
+        />
+      )}
 
       <form onSubmit={onSubmit}>
         Title: <input type="text" {...register("title")} />
