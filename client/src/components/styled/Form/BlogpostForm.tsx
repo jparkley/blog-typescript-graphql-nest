@@ -29,8 +29,12 @@ const BlogpostForm: React.FC<MyForm> = ({
           index: number
         ): JSX.Element => (
           <>
-            <Styled.Label>{label}</Styled.Label>
-            {inputType === "textarea" ? <Styled.TextArea /> : <Styled.Input />}
+            <Styled.Label key={index}>{label}</Styled.Label>
+            {inputType === "textarea" ? (
+              <Styled.TextArea id={name} name={name} />
+            ) : (
+              <Styled.Input id={name} name={name} type={inputType} />
+            )}
           </>
         )
       )}
