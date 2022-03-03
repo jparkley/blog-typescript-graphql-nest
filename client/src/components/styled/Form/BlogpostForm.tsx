@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useCreateBlogpost } from "../../../hooks/useCreateBlogpost";
 import { FormElement } from "../../../interfaces/FormElementInterface";
 import { ButtonDark } from "../Button/Button.styled";
@@ -37,8 +37,11 @@ const BlogpostForm: React.FC<MyForm> = ({
 
   const [form, setForm] = useState(initialForm);
 
+  const onChangeHandler = (e: React.ChangeEvent<any>) =>
+    setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+
   return (
-    <Styled.Form>
+    <Styled.Form autoComplete={"off"}>
       {formElements.map(
         (
           { label, name, inputType }: FormElement,
@@ -49,7 +52,13 @@ const BlogpostForm: React.FC<MyForm> = ({
             {inputType === "textarea" ? (
               <Styled.TextArea id={name} name={name} />
             ) : (
-              <Styled.Input id={name} name={name} type={inputType} />
+              <Styled.Input
+                id={name}
+                name={name}
+                type={inputType}
+                // value={form[name as keyof ObjectType]}
+                onChange={(e) => onChangeHandler(e)}
+              />
             )}
           </>
         )
