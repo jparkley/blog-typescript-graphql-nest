@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useCreateBlogpost } from "../../../hooks/useCreateBlogpost";
 import { FormElement } from "../../../interfaces/FormElementInterface";
 import { ButtonDark } from "../Button/Button.styled";
 import * as Styled from "./Form.styled";
@@ -14,12 +16,26 @@ const BlogpostForm: React.FC<{
     onSubmit: any;
   }> = ({ formElements, buttonText, onSubmit }: MyForm) => {
 */
+
+const prepareForm = (formElements: FormElement[]) => {
+  return formElements.reduce((r, v) => ({ ...r, [v.name]: "" }), {});
+};
+
 const BlogpostForm: React.FC<MyForm> = ({
   formElements,
   buttonText,
   onSubmit,
 }: MyForm) => {
-  console.log("onsubmit", onSubmit);
+  const createBlogpost = useCreateBlogpost();
+  //   const onSubmit = handleSubmit(({ title, content, author }) => {
+  //     console.log(title);
+  //     createBlogpost({ variables: { input: { title, content, author } } });
+  //   });
+
+  const initialForm = prepareForm(formElements);
+  console.log("initialForm", initialForm);
+
+  const [form, setForm] = useState(initialForm);
 
   return (
     <Styled.Form>
@@ -38,7 +54,16 @@ const BlogpostForm: React.FC<MyForm> = ({
           </>
         )
       )}
-      <ButtonDark>{buttonText}</ButtonDark>
+
+      {/* <form onSubmit={onSubmit}>
+        Title: <input type="text" {...register("title")} />
+        Content:
+        <textarea {...register("content")} />
+        Author: <input type="text" {...register("author")} />
+        <button type="submit">Submit</button>
+      </form> */}
+
+      <ButtonDark onClick={onSubmit}>{buttonText}</ButtonDark>
     </Styled.Form>
   );
 };
