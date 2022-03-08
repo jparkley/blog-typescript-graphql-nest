@@ -12,7 +12,12 @@ interface MyForm {
 }
 
 const prepareForm = (formElements: FormElement[]) => {
-  return formElements.reduce((r, v) => ({ ...r, [v.name]: "test" }), {});
+  let initialFormObject: { [key: string]: string } = {};
+  initialFormObject = formElements.reduce(
+    (r, v) => ({ ...r, [v.name]: "test" }),
+    {}
+  );
+  return initialFormObject;
 };
 
 const BlogpostForm: React.FC<MyForm> = ({
@@ -49,7 +54,7 @@ const BlogpostForm: React.FC<MyForm> = ({
                 id={name}
                 name={name}
                 type={inputType}
-                //value={form[name as keyof FormElement]}
+                value={form[name as keyof FormElement]}
                 onChange={(e) => onChangeHandler(e)}
               />
             )}
