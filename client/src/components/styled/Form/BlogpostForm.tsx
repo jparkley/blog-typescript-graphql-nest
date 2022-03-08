@@ -12,9 +12,13 @@ interface MyForm {
 }
 
 const prepareForm = (formElements: FormElement[]) => {
+  /*
+    To fix Typescript error:
+    Element implicitly has an 'any' type because expression of type 'keyof FormElement' can't be used to index type '{}'.
+  */
   let initialFormObject: { [key: string]: string } = {};
   initialFormObject = formElements.reduce(
-    (r, v) => ({ ...r, [v.name]: "test" }),
+    (r, v) => ({ ...r, [v.name]: "" }),
     {}
   );
   return initialFormObject;
