@@ -16,7 +16,8 @@ const prepareForm = (formElements: FormElement[]) => {
     To fix Typescript error:
     Element implicitly has an 'any' type because expression of type 'keyof FormElement' can't be used to index type '{}'.
   */
-  let initialFormObject: { [key: string]: string } = {};
+  //let initialFormObject: { [key: string]: string } = {};
+  let initialFormObject: Record<string, any> = {}; // Using built-in type Record<T,K>
   initialFormObject = formElements.reduce(
     (r, v) => ({ ...r, [v.name]: "" }),
     {}
