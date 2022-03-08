@@ -8,23 +8,18 @@ interface MyForm {
   formElements: FormElement[];
   buttonText: string;
   onSubmit: any;
+  register: any;
 }
-/*
-const BlogpostForm: React.FC<{
-    formElements: FormElement[];
-    buttonText: string;
-    onSubmit: any;
-  }> = ({ formElements, buttonText, onSubmit }: MyForm) => {
-*/
 
 const prepareForm = (formElements: FormElement[]) => {
-  return formElements.reduce((r, v) => ({ ...r, [v.name]: "" }), {});
+  return formElements.reduce((r, v) => ({ ...r, [v.name]: "test" }), {});
 };
 
 const BlogpostForm: React.FC<MyForm> = ({
   formElements,
   buttonText,
   onSubmit,
+  register,
 }: MyForm) => {
   const createBlogpost = useCreateBlogpost();
   //   const onSubmit = handleSubmit(({ title, content, author }) => {
@@ -33,8 +28,6 @@ const BlogpostForm: React.FC<MyForm> = ({
   //   });
 
   const initialForm = prepareForm(formElements);
-  console.log("initialForm", initialForm);
-
   const [form, setForm] = useState(initialForm);
 
   const onChangeHandler = (e: React.ChangeEvent<any>) =>
@@ -56,7 +49,7 @@ const BlogpostForm: React.FC<MyForm> = ({
                 id={name}
                 name={name}
                 type={inputType}
-                // value={form[name as keyof ObjectType]}
+                //value={form[name as keyof FormElement]}
                 onChange={(e) => onChangeHandler(e)}
               />
             )}

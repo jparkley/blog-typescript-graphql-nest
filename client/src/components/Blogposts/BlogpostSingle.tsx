@@ -4,7 +4,7 @@ import { Blogpost } from "../../interfaces/BlogpostInterface";
 import { CardBodyStyled, CardHeaderStyled } from "../styled/Card.styled";
 import BlogpostForm from "../styled/Form/BlogpostForm";
 
-interface BlogpostForm {
+export interface BlogpostFormInput {
   title: string;
   content: string;
   author: string;
@@ -39,7 +39,7 @@ const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
   options: Options;
   blogpost?: Blogpost;
 }) => {
-  const { register, handleSubmit } = useForm<BlogpostForm>();
+  const { register, handleSubmit } = useForm<BlogpostFormInput>();
   const createBlogpost = useCreateBlogpost();
 
   const onSubmit = handleSubmit(({ title, content, author }) => {
@@ -53,6 +53,7 @@ const BlogpostSingle: React.FC<{ options: Options; blogpost?: Blogpost }> = ({
         <BlogpostForm
           formElements={formElements}
           buttonText="add"
+          register={register}
           onSubmit={onSubmit}
         />
       )}
