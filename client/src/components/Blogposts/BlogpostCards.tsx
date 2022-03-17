@@ -6,7 +6,7 @@ import {
 } from "../styled/Container/Container.styled";
 import BlogpostCard from "./BlogpostCard";
 
-const BlogpostList: React.FC<{ blogposts: Blogpost[] }> = ({
+const BlogpostCards: React.FC<{ blogposts: Blogpost[] }> = ({
   blogposts,
 }: {
   blogposts: Blogpost[];
@@ -22,4 +22,4 @@ const BlogpostList: React.FC<{ blogposts: Blogpost[] }> = ({
   );
 };
 
-export default BlogpostList;
+export default BlogpostCards;

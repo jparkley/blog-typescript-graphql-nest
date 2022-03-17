@@ -1,7 +1,7 @@
 import { Blogpost } from "../../interfaces/BlogpostInterface";
 import { CardBodyStyled, CardHeaderStyled } from "../styled/Card.styled";
 
-const BlogpostSingle: React.FC<{ blogpost: Blogpost }> = ({
+const BlogpostCard: React.FC<{ blogpost: Blogpost }> = ({
   blogpost,
 }: {
   blogpost: Blogpost;
@@ -17,4 +17,4 @@ const BlogpostSingle: React.FC<{ blogpost: Blogpost }> = ({
   );
 };
 
-export default BlogpostSingle;
+export default BlogpostCard;

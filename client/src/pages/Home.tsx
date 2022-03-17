@@ -1,4 +1,5 @@
-import BlogpostList from "../components/Blogposts/BlogpostList";
+import BlogpostCards from "../components/Blogposts/BlogpostCards";
+import PageTitle from "../components/PageTitle";
 import { useGetBlogposts } from "../hooks/useGetBlogposts";
 
 const Home = () => {
@@ -6,7 +7,8 @@ const Home = () => {
 
   return (
     <>
-      <BlogpostList blogposts={blogposts} />
+      <PageTitle title="Most Read" />
+      <BlogpostCards blogposts={blogposts} />
     </>
   );
 };
