@@ -7,8 +7,6 @@ import * as Styled from "./Form.styled";
 interface MyForm {
   formElements: FormElement[];
   buttonText: string;
-  onSubmit: any;
-  register: any;
 }
 
 const prepareForm = (formElements: FormElement[]) => {
@@ -28,20 +26,21 @@ const prepareForm = (formElements: FormElement[]) => {
 const BlogpostForm: React.FC<MyForm> = ({
   formElements,
   buttonText,
-  onSubmit,
-  register,
 }: MyForm) => {
   const createBlogpost = useCreateBlogpost();
-  //   const onSubmit = handleSubmit(({ title, content, author }) => {
-  //     console.log(title);
-  //     createBlogpost({ variables: { input: { title, content, author } } });
-  //   });
 
   const initialForm = prepareForm(formElements);
   const [form, setForm] = useState(initialForm);
 
   const onChangeHandler = (e: React.ChangeEvent<any>) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const { title, content, author } = form;
+
+    createBlogpost({ variables: { input: { title, content, author } } });
+  };
 
   return (
     <Styled.Form autoComplete={"off"}>
@@ -53,7 +52,12 @@ const BlogpostForm: React.FC<MyForm> = ({
           <>
             <Styled.Label key={index}>{label}</Styled.Label>
             {inputType === "textarea" ? (
-              <Styled.TextArea id={name} name={name} />
+              <Styled.TextArea
+                id={name}
+                name={name}
+                value={form[name as keyof FormElement]}
+                onChange={(e) => onChangeHandler(e)}
+              />
             ) : (
               <Styled.Input
                 id={name}
@@ -75,7 +79,7 @@ const BlogpostForm: React.FC<MyForm> = ({
         <button type="submit">Submit</button>
       </form> */}
 
-      <ButtonDark onClick={onSubmit}>{buttonText}</ButtonDark>
+      <ButtonDark onClick={(e) => handleSubmit(e)}>{buttonText}</ButtonDark>
     </Styled.Form>
   );
 };
