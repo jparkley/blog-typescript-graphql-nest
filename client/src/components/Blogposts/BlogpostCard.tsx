@@ -1,5 +1,9 @@
 import { Blogpost } from "../../interfaces/BlogpostInterface";
-import { CardBodyStyled, CardHeaderStyled } from "../styled/Card.styled";
+import {
+  CardBodyStyled,
+  CardHeaderStyled,
+  CardStyled,
+} from "../styled/Card.styled";
 
 const BlogpostCard: React.FC<{ blogpost: Blogpost }> = ({
   blogpost,
@@ -8,11 +12,13 @@ const BlogpostCard: React.FC<{ blogpost: Blogpost }> = ({
 }) => {
   return (
     <>
-      <CardHeaderStyled>
-        {blogpost.title} - {blogpost.author}
-      </CardHeaderStyled>
+      <CardStyled>
+        <CardHeaderStyled>
+          {blogpost.title} - {blogpost.author}
+        </CardHeaderStyled>
 
-      <CardBodyStyled>{blogpost.content}</CardBodyStyled>
+        <CardBodyStyled>{blogpost.content}</CardBodyStyled>
+      </CardStyled>
     </>
   );
 };

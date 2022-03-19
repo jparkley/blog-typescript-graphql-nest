@@ -11,7 +11,7 @@
 /backend/.docker-data/
 /backend/appspec.yml
 /backend/scripts/
-
+/client/test*
 
 # dependencies
 /client/node_modules

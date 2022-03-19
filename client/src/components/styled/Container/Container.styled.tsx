@@ -7,6 +7,7 @@ interface Props {
 }
 
 export const WrapperStyled = styled.div`
+  display: flex;
   flex-direction: column;
   height: 100%;
   margin: 0px auto;
@@ -20,6 +21,7 @@ export const WrapperStyled = styled.div`
 `;
 
 export const ContainerStyled = styled.div`
+  display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
